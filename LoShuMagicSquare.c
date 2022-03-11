@@ -63,7 +63,8 @@ int main(void){
     int square[3][3];
     int newRandomSeed = 0;
     int randNumber;
-    while(testLoShu != true){
+    bool test = false;
+    while(test != true){
         newRandomSeed++;
         srand(time(0) + newRandomSeed);
         for(int i = 0; i < 3; i++){
@@ -72,6 +73,7 @@ int main(void){
                 square[i][j] = randNumber;
             }
         }
+        test = testLoShu(square);
     }
     printf("Trials generated before success: %d\n", newRandomSeed);
     printSquare(square);
